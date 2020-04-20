@@ -1,7 +1,7 @@
 <?php
 
 
-class Address
+class PostalAddress implements Reachable
 {
     /**
      * @var string
@@ -19,7 +19,7 @@ class Address
     private string $street;
 
     /**
-     * Address constructor.
+     * PostalAddress constructor.
      * @param string $zipCode
      * @param string $city
      * @param string $street
@@ -41,9 +41,9 @@ class Address
 
     /**
      * @param string $zipCode
-     * @return Address
+     * @return Reachable
      */
-    public function setZipCode(string $zipCode): Address
+    public function setZipCode(string $zipCode): PostalAddress
     {
         $this->zipCode = $zipCode;
 
@@ -60,9 +60,9 @@ class Address
 
     /**
      * @param string $city
-     * @return Address
+     * @return Reachable
      */
-    public function setCity(string $city): Address
+    public function setCity(string $city): PostalAddress
     {
         $this->city = $city;
 
@@ -79,9 +79,9 @@ class Address
 
     /**
      * @param string $street
-     * @return Address
+     * @return Reachable
      */
-    public function setStreet(string $street): Address
+    public function setStreet(string $street): PostalAddress
     {
         $this->street = $street;
 

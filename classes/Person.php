@@ -24,20 +24,20 @@ class Person
     private string $sex;
 
     /**
-     * @var Address
+     * @var Reachable
      */
-    private Address $address;
+    private Reachable $address;
 
     /**
      * Person constructor.
      * @param string $name
      * @param string $firstName
      * @param int $age
-     * @param Address|null $address
+     * @param Reachable|null $address
      * @param string $sex
      */
     public function __construct(string $name, string $firstName,
-                                int $age ,Address $address = null, string $sex = "F")
+                                int $age ,Reachable $address = null, string $sex = "F")
     {
         $this->name = $name;
         $this->firstName = $firstName;

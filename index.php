@@ -1,11 +1,11 @@
 <?php
 
-require "classes/Person.php";
-require "classes/Address.php";
-require "classes/Student.php";
+spl_autoload_register(function ($className){
+   require "classes/$className.php";
+});
 
 
-$address = new Address("75008", "Paris", "5 rue du Bac" );
+$address = new PostalAddress("75008", "Paris", "5 rue du Bac" );
 $alice = new Person("Soltidon", "Alice", 27, $address);
 
 $alice->setAge(30)->setName("Martin");
@@ -33,6 +33,14 @@ $pierre = new Student(
 
 echo $pierre->getFullName();
 
+$prof = new Teacher("Adams", "Niels", 46
+                ,new EmailAddress("prof@moi.com")
+                ,"M", ["Java"]);
+
+
+echo "<pre>";
+echo $prof->getAddressDetails();
+echo "</pre>";
 
 
 

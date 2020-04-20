@@ -11,7 +11,7 @@ class Student extends Person
      * @param string $trainingCourse
      */
     public function __construct(string $trainingCourse, string $name, string $firstName,
-        int $age ,Address $address = null, string $sex = "F")
+        int $age ,Reachable $address = null, string $sex = "F")
     {
         //Appel au constructeur du parent
         parent::__construct($name, $firstName, $age, $address, $sex);
@@ -42,6 +42,10 @@ class Student extends Person
     public function getFullName(): string
     {
         return parent::getFullName(). " étudiant ". $this->trainingCourse;
+    }
+
+    public function canTeachMe(Teacher $teacher): bool {
+        return $teacher->isSkilled($this->trainingCourse);
     }
 
 
