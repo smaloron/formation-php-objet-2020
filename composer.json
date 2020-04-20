@@ -1,0 +1,17 @@
+{
+    "name": "seb/php-objet",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Sebastien Maloron",
+            "email": "contact@smaloron.eu"
+        }
+    ],
+    "require": {},
+
+    "autoload": {
+        "psr-4": {
+            "m2i\\customFramework\\": "src/"
+        }
+    }
+}
